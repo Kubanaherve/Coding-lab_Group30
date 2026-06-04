@@ -17,3 +17,19 @@ process_vitals() {
 
     echo "Critical alerts were properly saved to reports/critical_alerts.txt"
 }
+water_audit() {
+
+    echo "Water Usage Audit"
+
+    awk -F',' '
+    /ICU_WATER_RESERVE/ {
+        sum += $3
+        count++
+    }
+    END {
+        if (count > 0)
+            printf "Average ICU Water Usage: %.2f\n", sum/count
+        else
+            printf "No ICU water records found\n"
+    }' active_logs/water_usage.log
+}
