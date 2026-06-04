@@ -6,10 +6,8 @@ secure_data() {
     echo "  Securing active_logs directory..."
     echo "============================================"
 
+    # Only owner can read and write
     chmod 700 active_logs
 
     echo "Permissions applied: Owner-only read/write access on active_logs."
-    echo ""
-    echo "Current permissions:"
-    ls -l | grep active_logs
 }
