@@ -9,3 +9,8 @@ for log_file in active_logs/*.log; do
 
    echo "Archiving $filename to archived_logs/$new_name"
    mv "$log_file" "archived_logs/$new_name"
+
+   touch "active_logs/$filename"
+   echo "Recreated empty $filename in active_logs/"
+
+
