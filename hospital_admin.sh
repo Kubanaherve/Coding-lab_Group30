@@ -10,4 +10,7 @@ secure_data() {
     chmod 700 active_logs
 
     echo "Permissions applied: Owner-only read/write access on active_logs."
+    echo ""
+    echo "Current permissions:"
+    ls -l | grep active_logs
 }
