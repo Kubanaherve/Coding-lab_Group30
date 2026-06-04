@@ -9,7 +9,7 @@ initialize_system(){
      then
        echo "file $i does exist"
   else
-    echo "creating active_logs directory"
+    echo "file doesn't exist; creating active_logs directory"
     echo $(mkdir $i)
 
  fi
@@ -18,7 +18,7 @@ initialize_system(){
      then
        echo "file $a does exist"
   else
-   echo "creating archived_logs directory"
+   echo "file doesn't exist; creating archived_logs directory"
     echo $(mkdir $a)
 
  fi
@@ -27,7 +27,7 @@ initialize_system(){
      then
        echo "file $r does exist"
   else
-    echo "creating reports directory"
+    echo "file doesn't creating reports directory"
     echo $(mkdir $r)
 
  fi
